@@ -1,48 +1,89 @@
 # Naming Convention
 
-File Format
+This document defines the file naming rules for the multi-modal sensing dataset.
 
-<Device>_<Action>_<Subject>_<Distance>_<Trial>
+The dataset includes two main data sources:
 
-Example
+- WiFi-CSI data
+- mmWave radar data
 
-MMW_C2_S01_D2_T01.csv
+Each file name should include the device type, activity type, subject ID, distance, and trial number.
 
-Meaning
+---
 
-MMW
-Millimeter Wave
+## File Name Format
 
-C2
-Walking
+```text
+DEVICE_ACTION_SUBJECT_DISTANCE_TRIAL.extension
+```
 
-S01
-Subject 1
+---
 
-D2
-2 meters
+## Examples
 
-T01
-Trial 1
+```text
+CSI_C1_S01_D2_T01.csv
+MMW_C1_S01_D2_T01.csv
+LABEL_C1_S01_D2_T01.xlsx
+```
 
-Code
-Action
+---
 
+## Field Explanation
 
-C0 
-Empty Room
+| Field | Example | Meaning |
+|---|---|---|
+| DEVICE | CSI | WiFi-CSI data |
+| DEVICE | MMW | mmWave radar data |
+| DEVICE | LABEL | Label file |
+| ACTION | C1 | Activity code |
+| SUBJECT | S01 | Subject ID |
+| DISTANCE | D2 | Distance is 2 meters |
+| TRIAL | T01 | Trial number 1 |
 
-C1
-Standing
+---
 
-C2
-Walking
+## Device Code
 
-C3
-Sit-Stand
+| Code | Meaning |
+|---|---|
+| CSI | WiFi-CSI data |
+| MMW | mmWave radar data |
+| LABEL | Label file |
 
-C4
-Hand Wave
+---
 
-C5
-Multiple People
+## Activity Code
+
+| Code | Activity |
+|---|---|
+| C0 | Empty Room |
+| C1 | Standing |
+| C2 | Walking |
+| C3 | Sit-Stand |
+| C4 | Hand Wave |
+| C5 | Multiple People |
+
+---
+
+## Naming Rules
+
+- Use uppercase letters in file names.
+- Use `_` to separate different fields.
+- Do not use spaces in file names.
+- Keep the same ACTION, SUBJECT, DISTANCE, and TRIAL for matching CSI, MMW, and LABEL files.
+- File names should be consistent with `experiment_records.xlsx`.
+
+---
+
+## Example of Matching Files
+
+For one experiment of subject S01 standing at 2 meters, trial 1:
+
+```text
+CSI_C1_S01_D2_T01.csv
+MMW_C1_S01_D2_T01.csv
+LABEL_C1_S01_D2_T01.xlsx
+```
+
+These three files should refer to the same experiment.
