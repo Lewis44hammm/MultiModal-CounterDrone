@@ -149,4 +149,5 @@ Main deliverables:
 
 This repository is mainly used to keep all experiment data organized and easy to check.  
 Each experiment should have clear file names, labels, and experiment records.
+
 At this stage, the repository focuses on indoor human activity sensing as the initial data management and sensing-validation task for the SURF project.
