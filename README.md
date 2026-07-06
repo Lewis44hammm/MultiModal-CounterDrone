@@ -143,6 +143,11 @@ Main deliverables:
 - `Naming_Convention.md`
 - `Data_Collection_Guide.md`
 
+##Week 2 Work
+
+The experiment index file is stored at `data/experiment_records/Experiment_Index.xlsx`. 
+It links each experiment segment with the corresponding WiFi-CSI file, mmWave radar file, label information, and notes.
+
 ---
 
 ## Notes
