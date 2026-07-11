@@ -152,6 +152,73 @@ It links each experiment segment with the corresponding WiFi-CSI file, mmWave ra
 
 ---
 
+## Week 3 Work
+
+### mmWave Sensor Data Collection Procedure
+
+This project collects mmWave radar data for indoor human activity sensing. The main goal is to study whether human motion states can be distinguished using mmWave features such as distance, velocity, and reflection intensity.
+
+### Activity Classes
+
+The experiment includes the following activity classes:
+
+| Code | Activity | Number of Segments |
+|---|---|---:|
+| C0 | Empty room | 20 |
+| C1 | Single person static | 20 |
+| C2 | Single person walking | 20 |
+| C3 | Sit-to-stand | 20 |
+| C4 | Hand waving / arm swinging | 20 |
+| C5 | Multiple-person interference | Optional |
+
+Each segment lasts about **10–20 seconds**.  
+The basic dataset contains **100 mmWave segments** from C0 to C4.
+
+### Sensor Setup
+
+Before data collection, the mmWave radar should be fixed in a stable position. The sensor should face the human activity area directly. The recommended distance between the subject and the radar is **1–2 meters**, with **1.5 meters** used as the default distance.
+
+The radar should not be moved during recording. Large metal objects, glass doors, and people passing through the background should be avoided when possible.
+
+### Collection Steps
+
+For each experiment segment, follow these steps:
+
+1. Set up the mmWave radar and connect it to the computer.
+2. Open the mmWave sensor software.
+3. Load the radar configuration file.
+4. Record the experiment information, including subject, action, distance, device position, and notes.
+5. Start data recording.
+6. Ask the subject to perform the assigned activity for 10–20 seconds.
+7. Stop recording and save the mmWave data file.
+8. Check whether the file was saved correctly.
+9. Update the experiment record table.
+
+### Data to Record
+
+Each segment should have a corresponding record containing:
+
+| Field | Description | Example |
+|---|---|---|
+| segment_id | Unique segment ID | S041 |
+| subject | Subject ID | P01 |
+| action | Activity code | C2 |
+| action_name | Activity name | Single person walking |
+| distance | Distance from radar | 1.5 m |
+| device_position | Radar position | front |
+| duration | Recording duration | 15 s |
+| mmwave_file | Saved mmWave data file | mmwave_EXP001_S041_C2_P01_1p5m.csv |
+| note | Additional notes | Normal walking, no interference |
+| valid | Whether the segment is valid | yes |
+
+### File Naming Rule
+
+The recommended file naming format is:
+
+```text
+mmwave_<experiment_id>_<segment_id>_<action_code>_<subject_id>_<distance>.csv
+```
+
 ## Notes
 
 This repository is mainly used to keep all experiment data organized and easy to check.  
